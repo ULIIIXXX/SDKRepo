@@ -1,0 +1,1 @@
+include ':app', ':tesseract-sdk-v2-alfa'
