@@ -11,15 +11,20 @@ import mx.tesseract.sdk.v2.SDK;
 import mx.tesseract.sdk.v2.http.callbacks.ActivationCallback;
 import mx.tesseract.sdk.v2.support.domain.Result;
 
+/**
+ *
+ * @author Cristian Jaramillo (cristian_gerar@hotmail.com)
+ */
 public class MainActivity extends AppCompatActivity
 {
+
     static final String TAG = MainActivity.class.getName();
 
-    static final String TOKEN_NAME = "My Token 1";
+    static final String TOKEN_NAME = "My Token 3139";
 
-    static final String ENROLLMENT_STRING = "NTljNjQ1MWRhMGYyNzRiNzEwMGYwYjIxMzhiNzk2NWRmMThhZTNiMjRmN2QzMGVkMzZhNmI1ZTNiODJkYjNmYmQ3MTRkMWEzNzJlOTFjY2VhODVhMzk3YTE0OWQ1NGE3NWZjOThiMDBmM2IzOTFmZWFhNzA0NmEyZDQwMGNjY2UxNzRmNTk5NjRiODk0OTgyMDA4NzJiMzZkYjQxMjUzYzYzMjEyMWJiNjg0ZjdiODY1MGFiN2U1NzU1OTdmYTZlNzJkMmE5ZjUwMDNiMDgxYzVhOGJhOTg3Zjg4MjBlZDZmOGFmYjljNmNmNDZlZmQ0M2M3MDRhNTg0Njk3MWJlMGUzMDQ1ZWFkNThjNjM1NTg2NTJjN2QyNDFhMjcwN2JiMGU4ZmEwYTNjNjc0NmZhMWRhN2UyMmFlNzMzNjgzODc2OTUwMzBhNjZlNDQ0OTFiNDQ5NDg4Yjg3NjNkMDBiNjExYmNlMDdjOTM0OGRmYjJlNDZlMjljOGY1YWIwYzJlZTExZTVhODVhMGI4ODljNWFiODVjNGU1YjFiNzQ0YWUwYjk1MzI1NTk1ZDVlZmE1MDUxYTlmMTYyNTQ5NDVkZmY3NTZlZTQwZjQwNjljYWY";
+    static final String ENROLLMENT_STRING = "MTY1YTRlZDY2NzM4YTcwYzM3M2M0YTY5NmNmZWQ3YjNiNzczYTdmNjE0ZGM2MTlmOWZmNDM0NWMxN2U0ZTgzNTMzM2I0MDFhNWIxYWRkNDQ1ZDk2OTQ5N2NkZGVjZGM2OGJhMjQwOTMxNzdiZmM3MWQ5ZWU3ZDBiMGNiZDQ4YzI3ZjFjM2U3Mjc0NDgyODMwZjVhZGFlMDg1NzE1ZWI1OGRiNzU3N2ZhMjI2NGI4NjAxNTA0ZDNkZjhjMWJmOTI3MTU0ODJhMmZiODJhODIyMWQzN2Q4NGFlYWZjYWEzNzA5Mzg0N2Y2MTY0MGFhYzg0ODU2Y2E0N2MyNjhmYzg3ODRiMDNiNmFlZDVmZWNlMWE5YjdlNzExNTVkZDYyYzdmMjMyMTYwODcwNDJiMTJlOTkyODA2NDVmZmE5N2M0ZTE3MjA5Y2E1NmY1MDY0N2IzYjA0NTIwY2QzMWQ3MWJkNGZjNGQ2YWMyMTFmZDIzYzVlZWM1MzljOGUxNzQ1ODhhMDdlYTc0YTExODlkZjExY2QyNzJiMjgzNmE1Mzg4OWM3ZmViN2U5YWEzZTZkZWU2MjAwZTAyYTQzYjZhYTcyMDQyZmYyMGVjOThiNzE3OWQ=";
 
-    static final String ACT_CODE = "57130222";
+    static final String ACT_CODE = "94377613";
 
     static final String PIN = "4547";
 
@@ -198,4 +203,5 @@ public class MainActivity extends AppCompatActivity
         Log.i(TAG, String.format("| %-20s | %-28s |", field, value == null ? "EMPTY" : value));
         Log.i(TAG, String.format("+%22s+%30s+", "", "").replace(' ','-'));
     }
+
 }
