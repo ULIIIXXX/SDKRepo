@@ -20,13 +20,15 @@ public class MainActivity extends AppCompatActivity
 
     static final String TAG = MainActivity.class.getName();
 
-    static final String TOKEN_NAME = "My Token 3214";
+    static final String TOKEN_NAME = "My Token 3715";
 
-    static final String ENROLLMENT_STRING = "ZjgyOGUwMjE1NGNlZWRhNTg1NDU4ZGFkZWViZjYyZjllZWEzOGFkMGI2NGU5N2E5YjgxNDA4YTQyMWVhYmJkNjhmYmM1MDYyNzhjOThhZDA1MDIzY2VmMjQ0Nzk0M2IyMWFmZjJjODA1ZTk5Y2Y0NTFjYjA0MmEwNWQ2ZGRlMjllZDFmY2QwZGNmY2M5ZGVmZWYwNjhiM2MwNDhlNjdiZTk5OGRlNmRlMjY0YTMzZGNmNzFkZTI5MzA1Yjg5NWY3NjI2ZTUxNTQzZGVjNDBmZmMyYjY3N2Q2ZWYzZTdiNTA1YmExZjc4NzIyY2Y1Nzk1MzBhYjIxZmYzZGE2MTc3YzkwNjViMTU3YmY1MzQ1OWZiZmRhOTk2MzZjODZlNDY2ZmExNGI4MTI0MThiYmNhMTAzYzNjNDk5Mjg0OGVlMTNkZjdhZWYwNjMxN2E5NzdlZWI1MTk1NTE5YWE5ZjIxOTFhMGRmNjQxY2EyNzUyMzgzNDhkY2YyODQwNzE3OTAyOGQ2YzM5OGQwMWRkYzFlYTUxNDk3ZDAwZDQ1NGQ4YWQ2MDM2ODRjZTFkZjgwNGQ1NzE0YmM3M2VkYjg3ZmU0ZmQyMThmYTdlMjQwNzE2MTE=";
+    static final String ENROLLMENT_STRING = "MDBjMmE0NGI0YjVhODg4YzJjMGI0ZWRjMTMyMzUzOTc2OTZmNjFhYWQ5Y2MxMzlmN2RlNjdjNTQwZmJkMjdhYTZiNjEzMTY3ZWJkMTU0NjIxN2E5ZWYyZGQzNmFkMGNlODE5MGVkMWNiNjQ1YTY1OTljZTgxMDI1MGM4ZTAwOTdiNGFhYzY5ZDk4M2U2ZGE3NTgyZWU5YThmYjhiY2JjNDY4YzkzNjhkNDk1ZTg1NTZlYjM2ZGEyZGIxYmU2YmYwNzJiYmJkYTlmNDU0YjkxOTBjOGRkOTIzYjMzMTQyOWUwNWExZjIyYmQ2OWU2ZTI1N2E0YzAzODJiMDZjY2JmODA5M2NjMjE3YmFkNDdmYWNkMWFlNGMyODIwZDYwMDU4MzkwYmQ0ZjlkN2Y3ZjJhNzYxZjBjYWIwNGY3ZGU4NWVmNWJjZjM1ZmIwY2QwNGQxZmZkNGRiZDY0YmM5Mjk1MzdmOWJjYTgxMjc2NjY5MDgxOTk3YTIyYTQ4MDgyYzc3ZTJiNDg0MzE3MjkwNTA4ZmViZTk0YjMyY2RkZGRhZjFjZDIxNWU0ZmE2MTQxZmMzZGJjYmJlMGJiNGNlNzdjYTBkMWRkNzE1MjJkMGI1ODU=";
 
-    static final String ACT_CODE = "54296617";
+    static final String ACT_CODE = "82395828";
 
     static final String PIN = "4547";
+
+    static final String CHALLENGE = "375737";
 
     /**
      *
@@ -142,7 +144,7 @@ public class MainActivity extends AppCompatActivity
                      */
                     @Override
                     public void onTick(long l) {
-                        otpTextView.setText(SDK.generateOTP(null));
+                        otpTextView.setText(SDK.generateOTP(CHALLENGE));
                         timeoutTextView.setText(String.format("timeout %02d", (SDK.getTimeInterval()- SDK.getTimeout()) / 1000));
                     }
 
@@ -190,7 +192,7 @@ public class MainActivity extends AppCompatActivity
         format("Token Max Attempts", SDK.getMaxAttempts());
         format("Token Timeout", SDK.getTimeout());
         format("Token Is Auth", SDK.isAuth());
-        format("Token OTP/Response", SDK.generateOTP(null));
+        format("Token OTP/Response", SDK.generateOTP(CHALLENGE));
     }
 
     /**

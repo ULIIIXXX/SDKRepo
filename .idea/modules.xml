@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2-android-started.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2-android-started.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2.0.8-alpha/tesseract-sdk-v2.0.8-alpha.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2.0.8-alpha/tesseract-sdk-v2.0.8-alpha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2.1.0-beta/tesseract-sdk-v2.1.0-beta.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2.1.0-beta/tesseract-sdk-v2.1.0-beta.iml" />
     </modules>
   </component>
 </project>
