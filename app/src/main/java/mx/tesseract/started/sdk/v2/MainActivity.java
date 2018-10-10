@@ -20,11 +20,11 @@ public class MainActivity extends AppCompatActivity
 
     static final String TAG = MainActivity.class.getName();
 
-    static final String TOKEN_NAME = "My Token 3715";
+    static final String TOKEN_NAME = "My Token 3734";
 
-    static final String ENROLLMENT_STRING = "MDBjMmE0NGI0YjVhODg4YzJjMGI0ZWRjMTMyMzUzOTc2OTZmNjFhYWQ5Y2MxMzlmN2RlNjdjNTQwZmJkMjdhYTZiNjEzMTY3ZWJkMTU0NjIxN2E5ZWYyZGQzNmFkMGNlODE5MGVkMWNiNjQ1YTY1OTljZTgxMDI1MGM4ZTAwOTdiNGFhYzY5ZDk4M2U2ZGE3NTgyZWU5YThmYjhiY2JjNDY4YzkzNjhkNDk1ZTg1NTZlYjM2ZGEyZGIxYmU2YmYwNzJiYmJkYTlmNDU0YjkxOTBjOGRkOTIzYjMzMTQyOWUwNWExZjIyYmQ2OWU2ZTI1N2E0YzAzODJiMDZjY2JmODA5M2NjMjE3YmFkNDdmYWNkMWFlNGMyODIwZDYwMDU4MzkwYmQ0ZjlkN2Y3ZjJhNzYxZjBjYWIwNGY3ZGU4NWVmNWJjZjM1ZmIwY2QwNGQxZmZkNGRiZDY0YmM5Mjk1MzdmOWJjYTgxMjc2NjY5MDgxOTk3YTIyYTQ4MDgyYzc3ZTJiNDg0MzE3MjkwNTA4ZmViZTk0YjMyY2RkZGRhZjFjZDIxNWU0ZmE2MTQxZmMzZGJjYmJlMGJiNGNlNzdjYTBkMWRkNzE1MjJkMGI1ODU=";
+    static final String ENROLLMENT_STRING = "ODhhZWEyODQxM2MyMTRjNWEyMWI4YzA1YjU3Y2Q3NjJhMzNlMDZlYjc3YmZlNjI4YTFlODJmMWVhYzE5OWUyMjA2MDgwYjU2MjAxNTQ4OGVjZTBhYTEzYmEwYjVjMmMwMGNmZGQ5NGViYWEwNTM5MDVkNTAwNzY4YTZlN2Q4OGRhNTI0ZjQ2YmE2ZGQ2M2Q3MjdiNmVmZjkzNjgzMzgzZDVkMTUwODBkNGEzNzdmMDc4M2I4MzAyYWI5ZGRlMDk1NDZjYzhjYjBkNmY0NmYxY2Q3MjM5OWMyZWRmMjc3Y2IzMjAyMjE4YjE1OTVhOGNmNWU2YmE1YjE3N2I2ZTEzY2Y3ZmFhMjZhMzBiNDAzMDRlZTc3M2ZlZmJkMGQzOGU3YTYxNDk2YWYyMjY4ZTNiNDhmOGI0MmEzMWZkN2I2NmY0YjBhYjkxZDg0NjdhM2ZlODA5ZTBhMWY0MGFlNWE5Y2Y5ZTc1NTM0YzRiOGM0ODI2NDViM2E3MDMxOTE0MDMyZDhjOTAzN2Y5YjFkNTJhMjg1NDlhMDBiYzA3ZTU2YTk5ZTQwOGE5OTg0ZjgzYWViOWYxMzNjZWJiOGNlMGM4MWQ1ZGFlZTRjNDYzMWRjMzE=";
 
-    static final String ACT_CODE = "82395828";
+    static final String ACT_CODE = "36332225";
 
     static final String PIN = "4547";
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(mx.tesseract.sdk.v2.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         otpTextView = findViewById(R.id.otp_text_view);
         timeoutTextView = findViewById(R.id.timeout_text_view);
