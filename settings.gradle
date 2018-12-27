@@ -1,1 +1,1 @@
-include ':app', ':tesseract-sdk-v2.1.1-final'
+include ':app', ':tesseract-sdk-v2.1.12-final'
