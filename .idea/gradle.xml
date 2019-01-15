@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/tesseract-sdk-v2.1.12-final" />
+            <option value="$PROJECT_DIR$/tesseract-sdk-v2.1.13-final" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
