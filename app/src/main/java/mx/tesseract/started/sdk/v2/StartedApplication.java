@@ -6,7 +6,7 @@ import mx.tesseract.sdk.v2.SDK;
 
 /**
  *
- * @author Cristian Jaramillo (cristian_gerar@hotmail.com)
+ *
  */
 public class StartedApplication extends Application
 {

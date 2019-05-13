@@ -4,7 +4,7 @@ import android.Manifest;
 
 /**
  *
- * @author Cristian Jaramillo (cristian_gerar@hotmail.com)
+ *
  */
 public class AppConfig
 {

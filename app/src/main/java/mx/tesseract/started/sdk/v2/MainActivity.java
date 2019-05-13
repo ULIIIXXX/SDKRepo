@@ -2,7 +2,7 @@ package mx.tesseract.started.sdk.v2;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,7 +13,7 @@ import mx.tesseract.sdk.v2.support.domain.Result;
 
 /**
  *
- * @author Cristian Jaramillo (cristian_gerar@hotmail.com)
+ *
  */
 public class MainActivity extends AppCompatActivity
 {
