@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2-android-started.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2-android-started.iml" />
       <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2-android-started.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2-android-started.iml" />
       <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2.1.13-final/tesseract-sdk-v2.1.13-final.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2.1.13-final/tesseract-sdk-v2.1.13-final.iml" />
       <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2.1.14-final/tesseract-sdk-v2.1.14-final.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2.1.14-final/tesseract-sdk-v2.1.14-final.iml" />
