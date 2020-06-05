@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Movil-tesseract-sdk-v2-android-started.iml" filepath="$PROJECT_DIR$/Movil-tesseract-sdk-v2-android-started.iml" group="tesseract-sdk-v2-android-started" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2-android-started.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2-android-started.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/tesseract-sdk-v2-android-started-app.iml" filepath="$PROJECT_DIR$/app/tesseract-sdk-v2-android-started-app.iml" group="tesseract-sdk-v2-android-started/app" />
       <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2.1.13-final/tesseract-sdk-v2.1.13-final.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2.1.13-final/tesseract-sdk-v2.1.13-final.iml" />
       <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2.1.14-final/tesseract-sdk-v2.1.14-final.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2.1.14-final/tesseract-sdk-v2.1.14-final.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tesseract-sdk-v2.1.15-final/tesseract-sdk-v2.1.15-final.iml" filepath="$PROJECT_DIR$/tesseract-sdk-v2.1.15-final/tesseract-sdk-v2.1.15-final.iml" group="tesseract-sdk-v2-android-started/tesseract-sdk-v2.1.15-final" />
     </modules>
   </component>
 </project>
