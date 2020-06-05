@@ -20,15 +20,16 @@ public class MainActivity extends AppCompatActivity
 
     static final String TAG = MainActivity.class.getName();
 
-    static final String TOKEN_NAME = "My Token 9";
+    static final String TOKEN_NAME = "Tesseract 2305";
 
-    static final String ENROLLMENT_STRING = "ODI4NjRmNzIzOTgyZTQ4NjM1NDcyY2JiMTE5N2QxYzkwOWY3MjJiZjQ3NThmOWQ1ZjYwMjdkOWVhMjMyZDI4MzhkMTIyZGE1YWY4MTBkNDdjZmQxMmU1YzJiNDEwNzNlNTc0MGMyOTRiMTFiODZiODdjNjdhNTc3ZmRiNDM5NGQ0NThjZTllZWFlMmU3YTNjM2U4MTFlODQwYjY1M2E5ZTBkZTM3ZDIxZTkxNTU3MzYxN2VlZTU2ZTg1MTg5NzgyMTU3NWQyM2MyMDBjZjFjYzQyOGM3ZmE2ZTA1MzA4ZmNlZjg1NTIwMjIwZTY1NzQ1MWI5MjY4Y2E1NTI5Y2I3NzljNjFlZjQ1ZGIyNTZhZThmOWNjMjc5YjQ2YTFhZjgxMjM0MTFjZjhjNjM1OTRhZGZiNzc0YTY5YTM4NGM5Y2ZmMGE4MDhiZGQ0NGFiZmJiNDMyOWU4Mjg5YTc5MGE1MGRiZTAxZTkxMGRmMWM2YWMyYmM2OWIyMzQzMjc4YmY4ZmE3MWJmMzgyODU3MTJiOWVmNWE5N2RmNGUzZDBlYmRjZDI3Nzk2Y2U2ZTNlOTVl";
+    static final String ENROLLMENT_STRING = "NDlmYTY3M2Q2NDgxYjAzZWIzMmJjYTgwNWQ1ZGQyM2E2MWUwZjI1OTJkMTNkZDRmMDc2MGE5OGQzMWY3OGQyOTZlNDZhNDk1OGUzMzFkMWM4Mzk5ODFmNjhjYWJhZmFmMTMxMmM0YWM4ZTg4NTZlZDE4NTMwYjYxZGVhM2MzMGY4NzAyODM0NTRmZjIyOGU5NTZhZTNlNzE3ODMzNjAyOGU5NWNlZDdjNDI5ODZiZjlkNmExNDc0YWJhMWIxYTk0NmUwMjMxMzliNTc5YzFiMjQ4OGUzM2Q3MDA0NGZmYTVhY2M2ZjMzZjQyYThjMTExN2IwZDcwYzkxZDYxMzRhYjZmYWM3MmUwMTY3ZTVmODIzZWNhOTQzMDI2YjVhNTdlMTI4Nzk1MzUyNzIyMjA0MDRhNjYxZDRkMTAxOTA3ODBhMDk4NWI4ZDc5MjJiMzFlZWU2MzA0ODhkMTY3NDY0YmE2YTg2NDdkOTQwNzdkZWU4NzBmZTJhNTBhYTU5MTgwMWNlZWNiMTMzYjkxOGM1Nzg3MWMwNzNhNjY0NjIzZDNiMTVhOTViYjNhYzljZGZiOTJkZjhlODE0YjZkZGRjMGYzNDZjY2QyNWExNzMxODg=";
 
-    static final String ACT_CODE = "41538459";
+    static final String ACT_CODE = "43115251";
 
-    static final String PIN = "4547";
+    static final String PIN = "1234";
 
-    static final String CHALLENGE = "375737";
+    static final String CHALLENGE = "527792";
+
 
     /**
      *
@@ -136,27 +137,21 @@ public class MainActivity extends AppCompatActivity
                 if(result != Result.SUCCESS)
                     return;
 
-                new CountDownTimer(10 * 60 * 1000, 1000) {
+                new CountDownTimer(10 * 60 * 100, 500) {
 
-                    /**
-                     *
-                     * @param l
-                     */
-                    @Override
-                    public void onTick(long l) {
-                        otpTextView.setText(SDK.generateOTP(CHALLENGE));
-                        timeoutTextView.setText(String.format("timeout %02d", (SDK.getTimeInterval()- SDK.getTimeout()) / 1000));
-                    }
 
-                    /**
-                     *
-                     */
-                    @Override
-                    public void onFinish() {
-                        Log.i(TAG, "Finish");
-                    }
+                        @Override
+                        public void onTick(long l) {
+                            otpTextView.setText(SDK.generateOTP(CHALLENGE));
+                            timeoutTextView.setText(String.format("timeout %02d", (SDK.getTimeInterval()- SDK.getTimeout()) / 1000));
+                        }
 
-                }.start();
+                        @Override
+                        public void onFinish() {
+                            Log.i(TAG, "Finish");
+                        }
+
+                    }.start();
 
                 break;
             case BLOCKED:
