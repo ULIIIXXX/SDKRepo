@@ -4,8 +4,13 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.sql.SQLOutput;
 
 import mx.tesseract.sdk.v2.SDK;
 import mx.tesseract.sdk.v2.http.callbacks.ActivationCallback;
@@ -20,15 +25,15 @@ public class MainActivity extends AppCompatActivity
 
     static final String TAG = MainActivity.class.getName();
 
-    static final String TOKEN_NAME = "Tesseract 2305";
+    static final String TOKEN_NAME = "Test  2760"; //2305
+    static final String ENROLLMENT_STRING = "YmZjNDIxMWNkZWMwNzkxNDc2YmUyMmE0MTllNjFmNjkwZDk4YWQ0NzVjNzVjOTMxZmNmYzg3OGViYzE5Njg5Y2IzZTU3MjYxYzJhYjU3OTNmNWZjMjg0MzcyN2JjNTM1MWY1NGNhNmUyYmRkZGQ0ZWRlNmIyOWZjMWZiNDYxNTk1YWFjMGQ2ODRlYmE1ZjJjMTcwYjEyZDI2ZDRhYjYwMjAwZjhlYWNkNzY2ZjYxYjRhODlkZDFhMzNmM2E3ZDY3NWUyODgwMDdlMjM5NDU3NGI3ZTk1M2YxODBkZmQ1NjRjYTcwNzhkMDAyOThhODIzNGYzNmYzMDgwMWY3MzRmZmZhZjliZjFkNzE3ODMwNmY2MDQ5NWUwMWM1YTQ3Y2M5MjM3YmFhMzdkODExNjQ4ZGY3ODBlZDcwMzM2MTVlMWZlODI2MzkxZDc0N2FjYmQxZTBmZTE1Zjc1MTUyYmI1YjBhYzJiYzdkMzYzNzMyMjA2NmRiNzNjMmRhZWU5YTIyMmUyZTAxMTBkN2EyYjBiZTZkZTkxZDY3OTBiZmI3MmQ5ZDliMjYxYTc5MjdlNDBiMmQ3OWY1MWUwMzY4NzE2NTFjMzYyYjE1OWM4YWYzOTQ=";
+    static final String ACT_CODE = "12547365";
+    static final String PIN = "7896";
 
-    static final String ENROLLMENT_STRING = "NDlmYTY3M2Q2NDgxYjAzZWIzMmJjYTgwNWQ1ZGQyM2E2MWUwZjI1OTJkMTNkZDRmMDc2MGE5OGQzMWY3OGQyOTZlNDZhNDk1OGUzMzFkMWM4Mzk5ODFmNjhjYWJhZmFmMTMxMmM0YWM4ZTg4NTZlZDE4NTMwYjYxZGVhM2MzMGY4NzAyODM0NTRmZjIyOGU5NTZhZTNlNzE3ODMzNjAyOGU5NWNlZDdjNDI5ODZiZjlkNmExNDc0YWJhMWIxYTk0NmUwMjMxMzliNTc5YzFiMjQ4OGUzM2Q3MDA0NGZmYTVhY2M2ZjMzZjQyYThjMTExN2IwZDcwYzkxZDYxMzRhYjZmYWM3MmUwMTY3ZTVmODIzZWNhOTQzMDI2YjVhNTdlMTI4Nzk1MzUyNzIyMjA0MDRhNjYxZDRkMTAxOTA3ODBhMDk4NWI4ZDc5MjJiMzFlZWU2MzA0ODhkMTY3NDY0YmE2YTg2NDdkOTQwNzdkZWU4NzBmZTJhNTBhYTU5MTgwMWNlZWNiMTMzYjkxOGM1Nzg3MWMwNzNhNjY0NjIzZDNiMTVhOTViYjNhYzljZGZiOTJkZjhlODE0YjZkZGRjMGYzNDZjY2QyNWExNzMxODg=";
+    static final String CHALLENGE = "655009";
 
-    static final String ACT_CODE = "43115251";
+    //
 
-    static final String PIN = "1234";
-
-    static final String CHALLENGE = "527792";
 
 
     /**
@@ -63,8 +68,79 @@ public class MainActivity extends AppCompatActivity
         super.onStart();
 
         Result result;
+        Button btn_token = (Button) findViewById(R.id.btn_token);
+        Button btn_send_data = (Button) findViewById(R.id.btn_send_data);
+        Button btn_pin = (Button) findViewById(R.id.btn_pin);
+        Button btn_status = (Button) findViewById(R.id.btn_status);
+        Button btn_activate = (Button) findViewById(R.id.btn_activate);
+        Button btn_challenge =  (Button) findViewById(R.id.btn_challenge);
+        Button btn_exp =  (Button) findViewById(R.id.btn_exp);
+        btn_token.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(MainActivity.this,"Esto funciono",Toast.LENGTH_SHORT).show();
+                SDK.createToken(TOKEN_NAME);
+            }
+        });
 
-        if(!SDK.existsToken(TOKEN_NAME))
+        btn_send_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SDK.enrollmentToken(ENROLLMENT_STRING,ACT_CODE);
+            }
+        });
+
+        btn_activate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SDK.activate(new ActivationCallback() {
+                    @Override
+                    public void success() {
+                        Toast.makeText(MainActivity.this,"Activado, se espera PIN",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void failed(Result result) {
+                        Toast.makeText(MainActivity.this,"ALgo ha fallado",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        btn_pin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SDK.setPin(PIN);
+            }
+        });
+
+        btn_challenge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SDK.auth(PIN);
+               // SDK.generateOTP(CHALLENGE);
+                otpTextView.setText("El OTP es:" + " " + SDK.generateOTP(CHALLENGE));
+               Toast.makeText(MainActivity.this,"Intentos restantes: " + SDK.getAttempts(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_exp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"Expira en:" + " " + SDK.getExpiresAt(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_status.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SDK.selectToken(TOKEN_NAME);
+                Toast.makeText(MainActivity.this,SDK.getStatus().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        /*if(!SDK.existsToken(TOKEN_NAME))
         {
             result = SDK.createToken(TOKEN_NAME);
 
@@ -100,12 +176,12 @@ public class MainActivity extends AppCompatActivity
                 /**
                  *
                  */
-                SDK.activate(new ActivationCallback() {
+              /*  SDK.activate(new ActivationCallback() {
 
                     /**
                      *
                      */
-                    @Override
+                /*    @Override
                     public void success() {
                         info("ACTIVATE TOKEN INFO");
                     }
@@ -114,7 +190,7 @@ public class MainActivity extends AppCompatActivity
                      *
                      * @param result
                      */
-                    @Override
+                  /*  @Override
                     public void failed(Result result) {
                         Toast.makeText(MainActivity.this, result.name(), Toast.LENGTH_SHORT).show();
                     }
@@ -164,7 +240,7 @@ public class MainActivity extends AppCompatActivity
                     return;;
 
                 break;
-        }
+        }*/
 
     }
 
@@ -178,6 +254,7 @@ public class MainActivity extends AppCompatActivity
         Log.i(TAG, String.format("+ %-51s +", s.toUpperCase()));
         Log.i(TAG, String.format("+%53s+", "").replace(' ','-'));
         format("Token Name", SDK.getTokenName());
+        format("A ver venga ese serial", SDK.getSerial());
         format("Token Status", SDK.getStatus());
         format("Token Type", SDK.getType());
         format("Token Serial", SDK.getSerial());
