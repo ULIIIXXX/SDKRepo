@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity
 
     static final String TAG = MainActivity.class.getName();
 
-    static final String TOKEN_NAME = "Test  2760"; //2305
-    static final String ENROLLMENT_STRING = "YmZjNDIxMWNkZWMwNzkxNDc2YmUyMmE0MTllNjFmNjkwZDk4YWQ0NzVjNzVjOTMxZmNmYzg3OGViYzE5Njg5Y2IzZTU3MjYxYzJhYjU3OTNmNWZjMjg0MzcyN2JjNTM1MWY1NGNhNmUyYmRkZGQ0ZWRlNmIyOWZjMWZiNDYxNTk1YWFjMGQ2ODRlYmE1ZjJjMTcwYjEyZDI2ZDRhYjYwMjAwZjhlYWNkNzY2ZjYxYjRhODlkZDFhMzNmM2E3ZDY3NWUyODgwMDdlMjM5NDU3NGI3ZTk1M2YxODBkZmQ1NjRjYTcwNzhkMDAyOThhODIzNGYzNmYzMDgwMWY3MzRmZmZhZjliZjFkNzE3ODMwNmY2MDQ5NWUwMWM1YTQ3Y2M5MjM3YmFhMzdkODExNjQ4ZGY3ODBlZDcwMzM2MTVlMWZlODI2MzkxZDc0N2FjYmQxZTBmZTE1Zjc1MTUyYmI1YjBhYzJiYzdkMzYzNzMyMjA2NmRiNzNjMmRhZWU5YTIyMmUyZTAxMTBkN2EyYjBiZTZkZTkxZDY3OTBiZmI3MmQ5ZDliMjYxYTc5MjdlNDBiMmQ3OWY1MWUwMzY4NzE2NTFjMzYyYjE1OWM4YWYzOTQ=";
-    static final String ACT_CODE = "12547365";
+    static final String TOKEN_NAME = " Test 2870"; //2305
+    static final String ENROLLMENT_STRING = "N2MyOTMxZDNhMDllZmZjYjcyYWQ3MDA3NmJlYTdhN2E4NWFkNThjY2JjZTNmYmEzNTFjOGFjOGE4ZGE4ODk1MWZiYjc0MmU5MjZlN2IwZGM5YjBkNzUyY2I5ZmIzZDRjMTRiYTUxYzJkYTU3ZGU1NzBhZmViMzVmOTY0N2ZlYzQzZTViNWI2NjA3M2RmODJiYTVhOThmNzY2MWE3N2YxNTI0YThhMmFhODhhMGQ5ZTc0ZjYzYTQzNDEyNTU1YWNjZjA3NDI2MGI3Mzc2NWI2ODE0YWU1MDcyZTFkOWU2MTU1NjAzODdlMjA0ZDI2M2M1NmIyZGJiOTAxNGUwYzYzMWM1OWM2NjhhZjRlZWQ3NWJiZTAyZjQyYTg5OTE3ZmFhMmUyOTdiOGU3YTNmYjZhZGU2ZGRhOTc5NDRiNTdmYTFlNzU0ZWIyYWQwNDBkNWRmNDQxODc4M2M4MDU1ZGVhMTExN2JhNjNkN2E4ZGNiMzE2NzE0ODM5MTU1ZWFlNGIxY2NmOGRlYzA3OTMzMzEwMzM0NTNlYWY3NzdkNGY2MTY1YzhiZDk2ZDQ2YTViM2VlZTMyMzBjOTdjOGEzNjExZmI3YTkwNzEzNThiZWYxZTY=";
+    static final String ACT_CODE = "46856188";
     static final String PIN = "7896";
 
-    static final String CHALLENGE = "655009";
+    static final String CHALLENGE = "377326";
 
     //
 
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity
         Button btn_activate = (Button) findViewById(R.id.btn_activate);
         Button btn_challenge =  (Button) findViewById(R.id.btn_challenge);
         Button btn_exp =  (Button) findViewById(R.id.btn_exp);
+        Button btn_delToken = (Button) findViewById(R.id.btn_delToken);
         btn_token.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,6 +139,15 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(MainActivity.this,SDK.getStatus().toString(),Toast.LENGTH_SHORT).show();
             }
         });
+
+       btn_delToken.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SDK.deleteToken(TOKEN_NAME);
+                Toast.makeText(MainActivity.this,"Se ha eliminado el token",Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
         /*if(!SDK.existsToken(TOKEN_NAME))

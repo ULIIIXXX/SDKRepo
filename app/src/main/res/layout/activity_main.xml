@@ -75,6 +75,12 @@
                 android:layout_height="wrap_content"
                 android:text="Consultar Status" />
 
+            <Button
+                android:id="@+id/btn_delToken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Eliminar Token" />
+
         </LinearLayout>
 
     </RelativeLayout>
