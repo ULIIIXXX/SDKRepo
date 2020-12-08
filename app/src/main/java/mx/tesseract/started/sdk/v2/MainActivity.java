@@ -1,16 +1,13 @@
 package mx.tesseract.started.sdk.v2;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.sql.SQLOutput;
 
 import mx.tesseract.sdk.v2.SDK;
 import mx.tesseract.sdk.v2.http.callbacks.ActivationCallback;
@@ -25,12 +22,12 @@ public class MainActivity extends AppCompatActivity
 
     static final String TAG = MainActivity.class.getName();
 
-    static final String TOKEN_NAME = " Test 2870"; //2305
-    static final String ENROLLMENT_STRING = "N2MyOTMxZDNhMDllZmZjYjcyYWQ3MDA3NmJlYTdhN2E4NWFkNThjY2JjZTNmYmEzNTFjOGFjOGE4ZGE4ODk1MWZiYjc0MmU5MjZlN2IwZGM5YjBkNzUyY2I5ZmIzZDRjMTRiYTUxYzJkYTU3ZGU1NzBhZmViMzVmOTY0N2ZlYzQzZTViNWI2NjA3M2RmODJiYTVhOThmNzY2MWE3N2YxNTI0YThhMmFhODhhMGQ5ZTc0ZjYzYTQzNDEyNTU1YWNjZjA3NDI2MGI3Mzc2NWI2ODE0YWU1MDcyZTFkOWU2MTU1NjAzODdlMjA0ZDI2M2M1NmIyZGJiOTAxNGUwYzYzMWM1OWM2NjhhZjRlZWQ3NWJiZTAyZjQyYTg5OTE3ZmFhMmUyOTdiOGU3YTNmYjZhZGU2ZGRhOTc5NDRiNTdmYTFlNzU0ZWIyYWQwNDBkNWRmNDQxODc4M2M4MDU1ZGVhMTExN2JhNjNkN2E4ZGNiMzE2NzE0ODM5MTU1ZWFlNGIxY2NmOGRlYzA3OTMzMzEwMzM0NTNlYWY3NzdkNGY2MTY1YzhiZDk2ZDQ2YTViM2VlZTMyMzBjOTdjOGEzNjExZmI3YTkwNzEzNThiZWYxZTY=";
-    static final String ACT_CODE = "46856188";
+    static final String TOKEN_NAME = " Test 3775";
+    static final String ENROLLMENT_STRING = "MDE2YTk0OTU3ZmE2OWY5ODYzZGJmOTAxMTdlMWM0M2I3ZmYyMWVkNmMxZjA4Y2M4OWZkNjdmNDcwYzM4ZTI2ZDE1MTc2YmMyNGE2NzFmZDZmMTNkNGFjNmFmMjM1NWI2NTNmZjM4ZTY1ZDNlYzM5YzRhYjI2ODIzYTJiY2JmNjlkYWMzNzVkMWE3NWZmYTY0ZjllN2E5YzY2YTIxYzMzNzAxZmNmMjgwODA2MzZkNzQ1YTkwMDkxNTU1NjBiYmI0ZjZhYWVkZWE4NzA0YmJmMmUyM2ZhNTMxOGQ3NTUwODYxNmRkMjk0NDU1MjI5Zjk0YmY2ZGMyNTUzMjljMzQ5OGMzMWIyZGZkM2NlZmVmZDA0MjUwMDA5OGU4YWVjNWEwM2E2M2NhY2ZiYjUyMGViMTA0N2JiMzZkNDEwMzk0YjVlNTY1YjNjZWE3ZmY0YWVlMzVkODg3ZTZkNmIyOTcwMzcxODliYTBkZjA5ZmI5NmJlMDRhYTAyNjMyNzliYWM5NDQ1YzZkNjFhNTk1Y2FjNjkzMzA2YzZiZjU2NTZmOTE2NDQzNGY0MWY3NTBiYTI1ZWZkZTgzYTI1NDlkNzFmMjk3Y2I2NTcxYzNlMmViYmQ=";
+    static final String ACT_CODE = "02123390";
     static final String PIN = "7896";
 
-    static final String CHALLENGE = "377326";
+    static final String CHALLENGE = "377326"; //Simula ser un token generado por el tesseract api , no lo usaremos en esta ocasion
 
     //
 
@@ -68,29 +65,45 @@ public class MainActivity extends AppCompatActivity
         super.onStart();
 
         Result result;
-        Button btn_token = (Button) findViewById(R.id.btn_token);
-        Button btn_send_data = (Button) findViewById(R.id.btn_send_data);
-        Button btn_pin = (Button) findViewById(R.id.btn_pin);
-        Button btn_status = (Button) findViewById(R.id.btn_status);
-        Button btn_activate = (Button) findViewById(R.id.btn_activate);
-        Button btn_challenge =  (Button) findViewById(R.id.btn_challenge);
-        Button btn_exp =  (Button) findViewById(R.id.btn_exp);
-        Button btn_delToken = (Button) findViewById(R.id.btn_delToken);
-        btn_token.setOnClickListener(new View.OnClickListener() {
+        Button btn_createToken = findViewById(R.id.btn_createToken);
+        Button btn_send_enroll_act_code = findViewById(R.id.btn_send_enroll_act_code);
+        Button btn_pin = findViewById(R.id.btn_pin);
+        Button btn_selectToken = findViewById(R.id.btn_selectToken);
+        Button btn_activate = findViewById(R.id.btn_activate);
+        Button btn_OTP = findViewById(R.id.btn_OTP);
+        Button btn_status = findViewById(R.id.btn_status);
+        Button btn_delToken = findViewById(R.id.btn_delToken);
+
+
+        //1 Creacion del token dentro del dispositivo movil
+        btn_createToken.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(MainActivity.this,"Esto funciono",Toast.LENGTH_SHORT).show();
-                SDK.createToken(TOKEN_NAME);
+                SDK.createToken(TOKEN_NAME); //Paso el nombre como parametro de la funcion
             }
         });
 
-        btn_send_data.setOnClickListener(new View.OnClickListener() {
+        //2 seleccionamos el token
+
+        btn_selectToken.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SDK.enrollmentToken(ENROLLMENT_STRING,ACT_CODE);
+                SDK.selectToken(TOKEN_NAME);
             }
         });
 
+
+        //3 Asignacion de cadena de enrolamiento y codigo de activacion
+        btn_send_enroll_act_code.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SDK.enrollmentToken(ENROLLMENT_STRING,ACT_CODE); // Paso cadena de enrolamiento y codigo de activacion como parametro
+            }
+        });
+
+
+
+        //4 Activamos el Token
         btn_activate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +121,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        // 5 Enviamos el pin de autenticacion
         btn_pin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,30 +129,25 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        btn_challenge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SDK.auth(PIN);
-               // SDK.generateOTP(CHALLENGE);
-                otpTextView.setText("El OTP es:" + " " + SDK.generateOTP(CHALLENGE));
-               Toast.makeText(MainActivity.this,"Intentos restantes: " + SDK.getAttempts(),Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        btn_exp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Expira en:" + " " + SDK.getExpiresAt(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        //6 Consultar token status
         btn_status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SDK.selectToken(TOKEN_NAME);
-                Toast.makeText(MainActivity.this,SDK.getStatus().toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"Estado del token:" + " " + SDK.getStatus(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        //7 Generamos el OTP
+        btn_OTP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SDK.auth(PIN);
+                otpTextView.setText("El OTP es:" + " " + SDK.generateOTP("null"));
+            }
+        });
+
+
 
        btn_delToken.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,7 +267,7 @@ public class MainActivity extends AppCompatActivity
      *
      * @param s
      */
-    private static void info(String s)
+    /*private static void info(String s)
     {
         Log.i(TAG, String.format("+%53s+", "").replace(' ','-'));
         Log.i(TAG, String.format("+ %-51s +", s.toUpperCase()));
@@ -275,17 +284,17 @@ public class MainActivity extends AppCompatActivity
         format("Token Timeout", SDK.getTimeout());
         format("Token Is Auth", SDK.isAuth());
         format("Token OTP/Response", SDK.generateOTP(CHALLENGE));
-    }
+    }*/
 
     /**
      *
      * @param field
      * @param value
      */
-    private static final void format(String field, Object value)
+   /* private static final void format(String field, Object value)
     {
         Log.i(TAG, String.format("| %-20s | %-28s |", field, value == null ? "EMPTY" : value));
         Log.i(TAG, String.format("+%22s+%30s+", "", "").replace(' ','-'));
-    }
+    }*/
 
 }

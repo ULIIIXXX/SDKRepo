@@ -34,46 +34,46 @@
                 android:text="@string/app_name"/>
 
             <Button
-                android:id="@+id/btn_token"
+                android:id="@+id/btn_createToken"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Crear token" />
+                android:text="1 - Crear token" />
 
             <Button
-                android:id="@+id/btn_send_data"
+                android:id="@+id/btn_selectToken"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enviar Enrollment y Act Code" />
+                android:text="2- Seleccionar token" />
+
+            <Button
+                android:id="@+id/btn_send_enroll_act_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3- Enviar Enrollment y Act Code" />
 
             <Button
                 android:id="@+id/btn_activate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Activar Token" />
+                android:text="4- Activar Token" />
 
             <Button
                 android:id="@+id/btn_pin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enviar PIN" />
-
-            <Button
-                android:id="@+id/btn_challenge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Generar OTP" />
-
-            <Button
-                android:id="@+id/btn_exp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Consultar Expiracion" />
+                android:text="5- Enviar PIN" />
 
             <Button
                 android:id="@+id/btn_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Consultar Status" />
+                android:text="6 Consultar Token Status" />
+
+            <Button
+                android:id="@+id/btn_OTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7- Generar OTP" />
 
             <Button
                 android:id="@+id/btn_delToken"
